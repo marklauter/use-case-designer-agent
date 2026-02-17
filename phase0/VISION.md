@@ -41,15 +41,17 @@ The facilitator's job is to keep asking *why* until the group converges on somet
 
 ### Round 2: "Who touches this?"
 
-The facilitator asks: *"Who interacts with this?"* and gets answers like "the customer," "the warehouse guy," "the driver," "the dispatcher." But these are sloppy. "The customer" might be three different actors with conflicting drives:
+The facilitator asks: *"Who interacts with this?"* and gets answers like "the customer," "the warehouse guy," "the driver," "the dispatcher." But these are sloppy. "The customer" might be three different primary actors with conflicting goals:
 
-- The **Sender** (drive: ensure package arrives safely)
-- The **Recipient** (drive: know when to expect delivery)
-- The **Complainant** (drive: get resolution when something goes wrong)
+- The **Sender** (goal: package is at its destination — safely, on time, intact)
+- The **Recipient** (goal: package is in their possession — predictably, conveniently)
+- The **Complainant** (goal: problem is resolved — fairly, promptly)
 
-The Socratic refinement works by qualifying until the qualifiers disappear and you have standalone nouns with singular drives. "Customer who sends things" becomes Sender. "Customer who receives things" becomes Recipient.
+Each of these is a conditional goal: a desired end state plus value conditions. The Sender doesn't want to "send a package" — that's a task. The Sender wants the package to *be there*. Safely. On time. Intact. Those value conditions are where the system design comes from.
 
-Consider: a passenger is someone who rides in a car. Technically the driver is a passenger — but it's the *operator* passenger. You refine "operator passenger" to Driver. Now you have a standalone noun with a clear drive (operate the vehicle), distinct from Passenger (be transported). The qualifier vanished because the noun absorbed it.
+The Socratic refinement works by qualifying until the qualifiers disappear and you have standalone nouns with singular goals. "Customer who sends things" becomes Sender. "Customer who receives things" becomes Recipient.
+
+Consider: a passenger is someone who rides in a car. Technically the driver is a passenger — but it's the *operator* passenger. You refine "operator passenger" to Driver. Now you have a standalone noun with a clear goal (be at the destination — via a route they control), distinct from Passenger (be at the destination — without having to operate the vehicle). The qualifier vanished because the noun absorbed it.
 
 This is how ubiquitous language emerges naturally. You don't design it — you extract it through dialogue until every name carries its own meaning without needing a qualifier.
 
@@ -57,16 +59,18 @@ This is how ubiquitous language emerges naturally. You don't design it — you e
 
 This is the part most methodologies skip but Cooper never does. You ask domain experts: *"What keeps you up at night?"*
 
-The answers reveal the real system:
-- "Packages get lost between warehouse and truck."
-- "Two drivers show up for the same route."
-- "Customer calls and nobody knows where the package is."
+The answers reveal where value conditions collide with reality:
+- "Packages get lost between warehouse and truck." — the Sender's *intact* value is threatened
+- "Two drivers show up for the same route." — the Recipient's *predictably* value is threatened
+- "Customer calls and nobody knows where the package is." — the Sender's *on time* value and the Complainant's *fairly* value are both threatened
 
-Each of these is a **domain tension** — and tensions are where bounded contexts crystallize. The "lost package" problem lives at the boundary between warehouse and logistics. That boundary *is* the context boundary, discovered through conflict rather than declared by architects.
+Each of these is a **tension** — a value condition meeting the forces of reality. And tensions are where bounded contexts crystallize. The "lost package" problem lives at the boundary between warehouse and logistics. That boundary *is* the context boundary, discovered through conflict rather than declared by architects.
+
+Tensions also spawn supporting actors. "Nobody knows where the package is" creates a tension that demands a **Tracker** — a supporting actor whose drive is visibility (know where every package is at all times). The Tracker exists because no primary actor's goal alone will produce package tracking. The tension between the Sender's values and operational reality *demands* it.
 
 ### Round 4: Use cases emerge naturally
 
-By now the group has actors with drives, tensions at boundaries, and a rough sense of the system's shape. Use cases aren't invented — they fall out. "The Dispatcher assigns routes" isn't something you design; it's something the domain experts have been doing, and now you've given it a name.
+By now the group has primary actors with conditional goals, supporting actors with drives, tensions at boundaries, and a rough sense of the system's shape. Use cases aren't invented — they fall out. "The Dispatcher assigns routes" isn't something you design; it's something the domain experts have been doing, and now you've given it a name.
 
 This is where the existing use-case-designer agent excels. Phase0 is everything upstream of that handoff.
 
