@@ -58,49 +58,52 @@ This is where the existing use-case-designer agent excels. Phase0 is everything 
 
 ---
 
-## The Agentic Pipeline
+## The Agentic Architecture
 
-Phase0 decomposes into a pipeline of Socratic agents, each operating at a different level of abstraction. Each agent's output feeds the next, but the process supports backtracking — discovering an actor might reveal a new bounded context, which might split an existing use case.
+### The Facilitator Already Exists
+
+A key realization: the main Claude Code conversation **is** the facilitator. It already:
+- Listens to the domain expert (the human user)
+- Asks clarifying questions
+- Notices when something important is said
+- Decides what to explore next
+- Invokes specialist agents when the conversation is ready for them
+
+The use-case-designer agent was initially conceived as a facilitator, but it's actually a **specialist** — it gets called in when facilitation has progressed far enough that a use case is ready to be designed. The same is true for every other agent in the pipeline. They're all specialists. The facilitator is the thing orchestrating them: the main conversation itself.
+
+This means the facilitator doesn't need to be *built*. It needs to be **equipped** — with guidance on how to conduct a Phase0 discovery session, and with specialist agents it can dispatch. The CLAUDE.md and guidance files are already the mechanism for equipping it.
+
+### The Pipeline
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│  1. SYSTEM DISCOVERY AGENT                              │
-│     "What problem are you solving?"                     │
-│     Input:  blank whiteboard                            │
-│     Output: system boundary, raw problem statements     │
-│     Method: why-chain questioning                       │
-├─────────────────────────────────────────────────────────┤
-│  2. ACTOR DISCOVERY AGENT                               │
-│     "Who touches this and what do they want?"           │
-│     Input:  system boundary                             │
-│     Output: refined actor catalog with drives           │
-│     Method: qualify → refine → separate                 │
-├─────────────────────────────────────────────────────────┤
-│  3. TENSION MAPPING AGENT                               │
-│     "What goes wrong? Where do goals conflict?"         │
-│     Input:  actors + drives                             │
-│     Output: bounded context candidates, domain events   │
-│     Method: conflict elicitation, boundary detection    │
-├─────────────────────────────────────────────────────────┤
-│  4. USE CASE DESIGNER AGENT  ← (exists today)          │
-│     "Walk me through how {actor} achieves {goal}"       │
-│     Input:  actors, contexts, tensions                  │
-│     Output: structured use cases per TEMPLATE.md        │
-│     Method: goal-directed Socratic interview            │
-├─────────────────────────────────────────────────────────┤
-│  5. CONTEXT CONSOLIDATION AGENT                         │
-│     "Do these contexts hold up? What crosses?"          │
-│     Input:  all use cases, all contexts                 │
-│     Output: validated bounded context map, protocols    │
-│     Method: cross-reference, event flow validation      │
-└─────────────────────────────────────────────────────────┘
+MAIN CONVERSATION  ← the facilitator (already exists)
+│
+├── equipped with: Phase0 guidance documents
+│     ├── discovery process phases
+│     ├── Socratic questioning techniques
+│     ├── when to invoke which specialist
+│     └── how to read historian notes for context recovery
+│
+├── dispatches specialist agents as needed:
+│     ├── System Discovery Agent     → system boundary, problem statements
+│     ├── Actor Discovery Agent      → refined actors with drives
+│     ├── Tension Mapping Agent      → bounded context candidates
+│     ├── Use Case Designer Agent    → structured use cases (exists today)
+│     └── Consolidation Agent        → validated context map, protocols
+│
+└── supported by:
+      └── Historian Agent  ← always listening, always writing
 ```
 
-### Agent Boundaries Are Not Walls
+The specialist agents are **subagents** — invoked by the facilitator when the conversation reaches a point where structured extraction is needed. The facilitator handles the fluid, nonlinear, backtracking-heavy conversational work. The specialists handle the disciplined, template-driven formalization work.
 
-In a real group session, facilitators bounce between these levels constantly. Discovering an actor might surface a tension. A tension might redefine the system boundary. A use case walkthrough might split an actor into two. The pipeline is a conceptual ordering, not a rigid sequence.
+### Why This Decomposition Works
 
-The agents need to support this fluidity — either through explicit backtracking protocols or through a facilitator agent that routes conversations where they need to go.
+In a real group session, the facilitator bounces between levels constantly. Discovering an actor might surface a tension. A tension might redefine the system boundary. A use case walkthrough might split an actor into two. This fluidity is natural in conversation — and the main Claude conversation already supports it.
+
+What the main conversation is *bad* at is disciplined, template-driven production of formal artifacts. That's what the specialist agents do. The use-case-designer agent doesn't need to be a good facilitator — it needs to be a good formalizer that takes conversational insights and crystallizes them into structured documents.
+
+This separation mirrors the real world: the facilitator at the whiteboard is loose, adaptive, responsive. The person writing up the meeting notes into formal specs afterward is rigorous, structured, template-driven. These are different skills, and forcing one agent to do both is why the use-case-designer was initially conceived as a facilitator when it's really a specialist.
 
 ---
 
@@ -119,28 +122,69 @@ The Socratic method is the right tool because:
 
 ---
 
-## The Hard Design Question: Who Holds the Threads?
+## Who Holds the Threads?
 
-In a group setting, the facilitator holds all the threads. They remember that Alice said "shipment" means one thing while Bob said it means another. That contradiction is a context boundary waiting to be named.
+### The Real-World Answer: The Historian
 
-In an agentic system, **who holds the threads?** Three options:
+In a group design session, the facilitator doesn't hold the threads alone. There's always someone — the **historian** — whose job is to *write things down*. The facilitator drives the conversation. The historian captures what matters.
 
-### Option A: Single Orchestrating Agent
-One agent delegates to specialist interviewers but maintains the global model.
-- **Pro:** Single source of truth, can spot cross-cutting contradictions.
-- **Risk:** Becomes a god-object. Socratic discipline breaks down when the orchestrator starts "knowing" too much.
+This is a critical distinction. The facilitator is focused on flow: "that's interesting, say more about that," "wait — you two just said opposite things." The historian is silently recording:
 
-### Option B: Shared Artifacts as the Thread
-Each agent reads/writes to a living model (markdown files), and consistency is maintained through cross-validation. This is the pattern the existing use-case-designer already follows.
-- **Pro:** Decentralized, each agent stays in its lane, artifacts are inspectable.
-- **Risk:** No single agent sees the whole picture. Contradictions may go unnoticed until consolidation.
+- "Alice said 'shipment' means what leaves the warehouse"
+- "Bob contradicted — he means what the customer ordered"
+- "Open question: same concept or two different ones?"
+- "Decision: we split Sender and Recipient"
 
-### Option C: Explicit Facilitator Agent
-A dedicated agent whose only job is to notice contradictions, track open questions, and decide which specialist to invoke next. It never writes artifacts — it only asks questions and routes.
-- **Pro:** Closest to the real-world group dynamic. Separation between facilitation and production.
-- **Risk:** Harder to implement. The facilitator needs enough domain understanding to know *when* a contradiction matters.
+The historian doesn't need deep domain understanding. They need to recognize **what matters**: contradictions, decisions, new terms, open questions, and shifts in understanding. That's a distinct skill from facilitation or domain expertise.
 
-The answer is probably a hybrid — shared artifacts for persistence (Option B) with a lightweight facilitator for routing and contradiction detection (Option C). The facilitator reads the artifacts but only writes to a "open questions" or "tensions" log, never to the model itself.
+### Why This Matters for Agents
+
+Humans have context windows too. Working memory is finite. When a meeting runs long, early insights get compressed or lost — both for the AI and for the human domain expert in the conversation. The historian compensates for both.
+
+In human practice, note-taking is a **learned skill**. People are taught to capture:
+- What was **decided** (not just discussed)
+- What was **contradicted** (not just stated)
+- What was **named** (new terms, renamed terms, retired terms)
+- What was **deferred** (explicit open questions)
+
+Agents need this skill too — and critically, they need to exercise it **without being prompted**. A human historian doesn't wait to be told "write that down." They recognize significance as it happens and record it. An agent historian should do the same.
+
+### The Architecture
+
+This resolves the "who holds the threads" question cleanly:
+
+**The threads live in the notes, not in any agent's head.**
+
+```
+┌──────────────────────────────────────────────────┐
+│  HISTORIAN AGENT  (always listening)              │
+│                                                   │
+│  Watches:  conversation between user & agents     │
+│  Writes:   session log, open questions,           │
+│            contradictions, decisions, new terms    │
+│  Never:    asks questions, makes design decisions  │
+│                                                   │
+│  Output format: timestamped markdown notes        │
+│  Storage: session-scoped files, rolled up into    │
+│           cross-session summaries                 │
+└──────────────────────────────────────────────────┘
+```
+
+The historian agent is **not the facilitator**. It doesn't route conversations or invoke specialists. It listens and writes. Other agents read its notes to recover context they've lost — and the human reads them to remember what happened three sessions ago.
+
+This mirrors how shared artifacts already work in the existing use-case-designer (markdown files as the integration layer), but adds a dedicated agent responsible for capturing the *process* of discovery, not just its *products*.
+
+### What the Historian Captures vs. What Specialist Agents Write
+
+| Historian writes | Specialist agents write |
+|-----------------|----------------------|
+| "We discussed splitting Customer into Sender and Recipient" | ACTOR-CATALOG.md entry for Sender |
+| "Open question: does Driver belong in Logistics or Fleet?" | DC-03-fleet-management.md |
+| "Contradiction: 'shipment' means different things to warehouse and delivery" | GLOSSARY.md entries |
+| "Decision: bounded context boundary between Warehouse and Logistics" | Domain context definitions |
+| "Alice's insight: 'we don't track packages, we track promises'" | Nothing — this is raw material, not yet an artifact |
+
+The last row is crucial. The historian captures things that aren't ready to become artifacts yet. Raw insights, half-formed ideas, metaphors the domain expert used — these are the seeds that specialist agents will later formalize. Without the historian, they vanish when the context window compresses.
 
 ---
 
