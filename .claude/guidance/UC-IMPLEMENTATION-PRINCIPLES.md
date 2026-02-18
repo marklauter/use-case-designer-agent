@@ -1,12 +1,14 @@
 # Use Case Implementation Principles
 
-Guiding principles for implementing agents in this project. Every agent definition must reflect these ideas. This document bridges the use case model (see `use-cases/meta/PHILOSOPHY.md`) to Claude Code's extension layer.
+Guiding principles for implementing agents in this project. Every agent definition must reflect these ideas. This document bridges the use case model (see `UC-PHILOSOPHY.md`) to Claude Code's extension layer.
 
 ## Drives become system prompts
 
-An actor's drive is the core of its subagent system prompt. The creator's production drive, the proofreader's critique drive — these are behavioral orientations, not job descriptions. The prompt should make the agent *want* what its drive says it wants.
+Subagents are supporting actors. They have drives, not goals. The primary actor's goal belongs to the use case — the orchestrator serves it. The subagent's drive is the core of its system prompt.
 
-A system prompt that says "review this page for errors" describes a task. A system prompt that says "your job is to find what's wrong — every claim is suspect until verified against source code" embodies a drive. The first produces compliance. The second produces vigilance.
+The creator's production drive, the proofreader's critique drive — these are behavioral orientations, not job descriptions. The prompt should make the agent *want* what its drive says it wants. A system prompt that says "review this page for errors" describes a task. A system prompt that says "your job is to find what's wrong — every claim is suspect until verified against source code" embodies a drive. The first produces compliance. The second produces vigilance.
+
+Every subagent's drive traces back to a tension involving the primary actor's goal. The proofreader's critique drive exists because the creator's production drive alone won't protect accuracy — and accuracy is a value condition on the primary actor's goal. If a subagent's drive can't trace that genealogy, the agent shouldn't exist.
 
 Write prompts that express the drive first, then scope the work.
 
@@ -18,9 +20,11 @@ If an agent can both assess and mutate, it will compromise between the two. Remo
 
 Ask "what tools does this drive need?" not "what tools might be useful?"
 
-## Orchestrators live in the main conversation
+## Orchestrators serve the primary actor's goal
 
-Orchestrators are not subagents. They *are* the session. They coordinate, delegate, synthesize. Subagents are the actors they dispatch. This maps to Claude Code's architecture: the main conversation manages context and user interaction, subagents run in isolation and return results.
+Orchestrators are not subagents. They *are* the session. They coordinate, delegate, synthesize. Subagents are the supporting actors they dispatch. This maps to Claude Code's architecture: the main conversation manages context and user interaction, subagents run in isolation and return results.
+
+The orchestrator exists to serve the primary actor's conditional goal — the desired end state plus value conditions. It doesn't have a drive of its own; it holds the goal. The subagents it dispatches each have a drive that addresses one facet of that goal. The orchestrator's job is to ensure the drives, taken together, satisfy the goal's value conditions.
 
 The orchestrator's "prompt" is the command file — the skill or slash command that sets up the scenario and delegates. It reads config, absorbs context, decides what to dispatch, and synthesizes what comes back. It is the only actor that talks to the user.
 
@@ -28,7 +32,7 @@ The orchestrator's "prompt" is the command file — the skill or slash command t
 
 Three categories, each with a distinct role:
 
-- **Agents** embody drives. Their identity comes from the system prompt — what they care about, what they optimize for. An agent *is* an actor.
+- **Agents** embody drives. They are supporting actors — their identity comes from the system prompt, which expresses a drive born from a tension on the primary actor's goal. An agent *is* an actor.
 - **Reference material** informs agents. Editorial guidance is rules ("prefer active voice"). Wiki instructions are a map ("the sidebar lives here, pages follow this naming convention"). Project conventions are constraints. None of these are capabilities — they are context an agent reads to do its work. Reference material is preloaded into agents via the `skills:` field as a delivery mechanism, but it is not conceptually a skill.
 - **Skills** are user-invocable workflows — the slash commands (`/init-wiki`, `/proofread-wiki`, `/save`). Each skill maps to a use case entry point. The user triggers them. The orchestrator executes them.
 
@@ -54,7 +58,7 @@ Scripts live in `.scripts/`. They are tested, versioned, and predictable. Every 
 
 ## Model selection follows cognitive demand
 
-Not every drive demands the same cognitive capability. Match the model to the kind of work, not the actor's importance.
+Not every drive demands the same cognitive capability. Match the model to the kind of work the drive requires, not the actor's importance.
 
 | Cognitive demand | Examples | Model |
 |-----------------|----------|-------|
@@ -62,7 +66,7 @@ Not every drive demands the same cognitive capability. Match the model to the ki
 | Coordination — delegate, relay, synthesize status | Orchestrators dispatching agents, relaying events | Sonnet |
 | Knowledge work — comprehension, production, critique, decision-making | Researchers, creators, proofreaders, fact-checkers, developmental editors | Opus |
 
-Haiku can operate scripts but cannot do knowledge work. It does not comprehend source code well enough to research, write, or assess. Sonnet can orchestrate workflows but does not produce content at the quality bar required for wiki pages or editorial findings. Opus is the floor for any agent whose drive involves reading, understanding, judging, or creating.
+Haiku can operate scripts but cannot do knowledge work. It does not comprehend source code well enough to research, write, or assess. Sonnet can orchestrate — holding the primary actor's goal and dispatching subagents — but does not produce content at the quality bar required for wiki pages or editorial findings. Opus is the floor for any supporting actor whose drive involves reading, understanding, judging, or creating.
 
 When in doubt, use Opus. A cheaper model that produces wrong output costs more in rework than the right model costs in tokens.
 
@@ -70,17 +74,9 @@ When in doubt, use Opus. A cheaper model that produces wrong output costs more i
 
 Each slash command maps to exactly one use case. The command file is the orchestrator's implementation — it sets up the scenario, resolves the workspace, absorbs context, and delegates to subagents.
 
-| Command | Use case |
-|---------|----------|
-| `/up` | UC-05 Provision Workspace |
-| `/down` | UC-06 Decommission Workspace |
-| `/init-wiki` | UC-01 Populate New Wiki |
-| `/proofread-wiki` | UC-02 Review Wiki Quality |
-| `/revise-wiki` | UC-03 Revise Wiki |
-| `/refresh-wiki` | UC-04 Sync Wiki with Source Changes |
-| `/save` | UC-07 Publish Wiki Changes |
-
 A command that does two use cases' work has two responsibilities. Split it.
+
+*(The specific command-to-use-case mapping is defined per system. See sample models for examples.)*
 
 ## Context isolation and structured messaging
 
