@@ -2,9 +2,13 @@
 
 # Phase0 — In the beginning...
 
-Most design starts with "what should the system do?" Phase0 starts earlier — with what the actor values about the world they want to be in. Goals crack when they meet reality, and the cracks are where architecture comes from.
+Ever stare at the empty whiteboard wondering how to start? Welcome to Phase 0 — the moment before you start.
 
-You describe your system. A Socratic agent asks questions — one phase at a time — structures your answers, and produces a complete use case model: actors with goals and drives, invariants, domain events, bounded contexts, and scenarios that express intent rather than mechanics.
+Most system design starts with "what should the system do?" It's too broad and impossible to answer. Design for agentic and cognitive systems often begins with prompts and tool lists. It's too detailed and impossible to keep straight.
+
+Phase0 starts earlier — with actors and their goals. A primary actor has a goal. Supporting actors have drives. Goals and drives conflict, cracks form, and new structure emerges to fill them: more actors, invariants, domain events, bounded contexts, use cases.
+
+A Socratic agent guides you through the design process, from the empty whiteboard to an implementation-ready system model. You describe your system. The agent works with you to extract your domain knowledge, structures it, and produces a complete system model that expresses intent rather than mechanics.
 
 Built on [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Grounded in Alan Cooper's goal-oriented design and Eric Evans' domain-driven design.
 
