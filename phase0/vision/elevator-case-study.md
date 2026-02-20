@@ -334,6 +334,102 @@ Students modeling the elevator domain consistently make the same mistakes. Each 
 
 ---
 
+## The discovery path
+
+This model was not designed top-down. It was discovered through conversation, starting from a single actor. The path from 1 actor to 80+ followed a series of moves, each triggered by a question or observation. This section captures those moves in order because the *process* of discovery is as instructive as the result.
+
+### Move 1: the free actors
+
+The teacher gives the student one primary actor free: **Passenger** — someone who rides in an elevator with the goal of being on a different floor without being mangled or waiting a long time. They are willing to invest a little time and effort to achieve their goal, but there is a limit.
+
+Two more actors are given free to demonstrate specialization: **Blind Passenger** (the elevator company puts braille on the numbers — maybe the government forces them to) and **Wheelchair Passenger** (the elevator company puts the control panel low so this passenger can reach the top floors — now everyone is inconvenienced by the weirdly low panel).
+
+These three establish the pattern: a base actor with a conditional goal, and specializations that add or intensify specific value conditions.
+
+### Move 2: derive the easy actors
+
+Prompt: *"What other actors can you think of? Give me 10."*
+
+Working from the Passenger's value conditions and the tensions they create, ten actors are derived: First Responder, Child, Hotel Guest, Office Worker, Owner, Inspector, Maintainer, Delivery Person, Architect, Manufacturer. Each traces back to a specific value condition. The Hotel Guest and Office Worker are why the Scheduler exists. The Owner's economic drive is why the Inspector exists. The Manufacturer's engineering is why the fail-safes exist.
+
+### Move 3: specialize the First Responder
+
+Observation: *"First responders have sub-types."*
+
+The First Responder splits into Firefighter (fire service mode, exclusive control), EMT (speed + stretcher space), and Police Officer (floor lockdown, access restriction). The Police Officer is the first actor whose goal *actively opposes* the general Passenger's goal — they remove access rather than add constraints.
+
+### Move 4: specialize the Owner
+
+Question: *"Are there subtypes of owners? A home owner has different economic interests than an office building owner."*
+
+The Owner splits into Commercial Building Owner (sharpest tension with Passenger safety), Home Owner (tension partially collapses — they are the Passenger), Landlord (economics shaped by tenant retention), and Hotel Owner (economics align with Passenger satisfaction). Key insight: the same genealogy root, but the tensions reshape depending on the Owner's economic context.
+
+### Move 5: follow the security thread
+
+Question: *"The Police Officer creates tension by locking down floors. Who else cares about secure elevator access?"*
+
+One actor's tension opened a whole family of actors: Tenant, Residential Tenant, Security Guard, Building Manager, Hospital Administrator, Data Center Operator, VIP, Visitor. A new tension was named: accessibility vs. security. Every security measure constrains someone else's access.
+
+### Move 6: discover the State as a primary actor
+
+Question: *"Do we already have the State as an actor?"*
+
+The State was implicit — "the state's interest in public welfare" — but never modeled as a primary actor with its own conditional goal. Once named, the State's values (safely, equitably, accountably) spawned their own derivation chain: Accessibility Regulator, Code Authority, Licensing Board, Fire Marshal, Installer. The Inspector was reframed as an agent of the State, not a standalone actor spawned by the Owner/Passenger tension alone. Drive reframed to "safety compliance."
+
+### Move 7: reframe the Architect as a primary actor
+
+Observation: *"The Architect is probably both primary and supporting. His goal is to select the correct elevator system for the building."*
+
+The Architect has their own conditional goal: the building has the correct elevator system — efficiently, safely, within budget, to code. This is not derived from a tension. It is a goal with its own value conditions. The Architect is a primary actor in their own right and a supporting actor of both the Passenger and the State.
+
+### Move 8: the Passenger rabbit hole
+
+Prompt: *"Let's keep going down the Passenger rabbit hole."*
+
+Sixteen more specializations discovered by working through categories: sensory and physical constraints (Deaf, Elderly, Passenger on Crutches, Pregnant), companions and cargo (Parent with Stroller, Service Animal Handler, Mover), institutional contexts (Hospital Patient, Prisoner, Juror), load patterns (Event Attendee, Shift Worker), situational (Night Passenger, Claustrophobic), and the Stranded Passenger — whose goal has fundamentally changed from "be on a different floor" to "get out."
+
+The Stranded Passenger spawned their own supporting actors: Emergency Dispatcher (the person who answers the red phone) and Rescue Technician (the person who gets them out). The red emergency phone exists because of this actor.
+
+### Move 9: cultural specializations
+
+Observation: *"There are cultural differences. In the US, passengers value speed — the elevators move so fast your ears pop. In Japan, passengers value the feeling of zero acceleration. In Russia, they value cheap garbage elevators that stop so hard it hurts your knees."*
+
+The value conditions are universal. The weighting is cultural. The American Passenger's "promptly" dominates — speed at the cost of comfort. The Japanese Passenger's "without trauma" extends to the physical sensation of normal operation — the ride quality is the product. The Russian Passenger's values are constrained by economics — the same values exist, but the budget does not allow them to be served.
+
+Key insight: a Manufacturer who builds the same elevator for Tokyo, New York, and Moscow has misunderstood three different Passengers.
+
+### Move 10: construction and engineering specializations
+
+Observation: *"There are construction workers who install these things — they require special affordances. And there is an engineer who designs various components, and systems engineers that design the whole system."*
+
+The Installer split into Construction Worker (builds the shaft), Elevator Installer (installs the car), and Commissioning Technician (tests before going live). Each needs different affordances in Norman's sense — the physical environment must afford safe interaction during phases when the Passenger's interfaces do not exist yet.
+
+The Engineer split into Mechanical, Electrical, Software, and Systems. The Software Engineer then split further into Firmware Engineer (embedded control — a bug can kill), Monitoring and Control Software Engineer (system observability), and Integration Engineer (cross-system correctness — fire control, security, building management).
+
+### Move 11: generalize and complete the lifecycle
+
+Question: *"Any additional opportunities to specialize, or generalize?"*
+
+Three generalization categories were named: Accessibility Passenger (the group the State's equity value protects), Institutional Passenger (moved through the system by others), Load Pattern Passenger (individually ordinary, collectively the reason the Scheduler exists). A fourth generalization — Regulatory Agent — named the mechanism by which the State's values become operational.
+
+The Inspector, Operator, and Maintainer each specialized. The lifecycle completed with the Decommissioning Authority — who decides when the elevator has reached end of life.
+
+### The discovery techniques
+
+Looking back, the moves used a small set of repeatable techniques:
+
+- **Specialization.** "Does this actor have sub-types?" Asked of Owner, Inspector, Maintainer, Operator, Engineer, Software Engineer, Installer, First Responder. Each split produced actors with distinct drives and distinct failure modes.
+- **Generalization.** "Is there a category that groups these?" Named Accessibility Passenger, Institutional Passenger, Load Pattern Passenger, Regulatory Agent. Generalizations do not create new actors — they name patterns that make the model navigable.
+- **Drive conflict.** "This actor's drive is insufficient to protect that actor's value." The Owner's economic drive conflicts with the Passenger's safety value — the Owner is not malicious, but a single drive cannot serve competing concerns. That insufficiency spawns the Inspector. The same pattern repeats throughout the model: the Manufacturer's commercial drive is insufficient to guarantee safety (spawns the Inspector), the Owner's cost-minimization is insufficient to guarantee accessibility (spawns the Accessibility Regulator), the Architect's design autonomy is insufficient to guarantee code compliance (spawns the Code Authority). Every time a supporting actor's drive pulls away from a primary actor's value, the gap demands a new actor whose drive fills it.
+- **Tension following.** "This tension implies who else must exist." The Police Officer's floor lockdown led to the entire security family. The Stranded Passenger's changed goal spawned the Emergency Dispatcher and Rescue Technician.
+- **Role reframing.** "Is this actor actually a primary actor?" The State was implicit in the Inspector's description. The Architect was listed as a supporting actor. Both became primary actors with their own conditional goals once the question was asked.
+- **Goal shifting.** "What happens when the goal changes?" The Stranded Passenger no longer wants to be on a different floor. They want to get out. A changed goal is a different actor.
+- **Cultural context.** "Do different cultures weight the values differently?" The same value conditions, different priorities, different system designs. A Manufacturer who ignores this has misunderstood the Passenger.
+- **Lifecycle thinking.** "Who touches this system at each phase of its life?" Design → build → install → commission → operate → maintain → modernize → decommission. Each phase has actors with different drives and different affordance needs.
+- **Affordance thinking.** "What does this actor need from the system that other actors do not?" The Construction Worker needs fall protection. The Elevator Installer needs construction mode. The Firmware Engineer needs a safe update mechanism. Norman's affordances applied to actor discovery.
+
+---
+
 ## Further reading
 
 - [Conditional goals](conditional-goals.md) — the theory behind conditional goals, the gift test, the derivation chain, and the genealogy test
