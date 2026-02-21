@@ -9,7 +9,6 @@ All durable output requested by the user is written as markdown files unless oth
 ## Agents
 
 - **`designing-usecases`** at `.claude/agents/designing-usecases.md` — the primary agent. Discovers domain structure through Socratic interview and writes use case artifacts. Preloads philosophy, template, and editorial skills.
-- **`use-case-designer`** at `.claude/agents/use-case-designer.md` — legacy agent, kept for reference.
 
 ## Guidance
 
