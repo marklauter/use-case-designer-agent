@@ -504,4 +504,3 @@ Looking back, the moves used a small set of repeatable techniques:
 ## Further reading
 
 - [Conditional goals](conditional-goals.md) — the theory behind conditional goals, the gift test, the derivation chain, and the genealogy test
-- [The discovery process](discovery-process.md) — how a facilitated session unfolds, in four natural rounds

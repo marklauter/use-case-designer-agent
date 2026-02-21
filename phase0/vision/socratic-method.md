@@ -89,5 +89,4 @@ Contradictions are gold because they surface structural boundaries that no singl
 
 ## Further reading
 
-- [The discovery process](discovery-process.md) — where these techniques are applied in practice, across four rounds of facilitated dialogue
 - [Conditional goals](conditional-goals.md) — the actors, goals, and values that Socratic extraction draws out

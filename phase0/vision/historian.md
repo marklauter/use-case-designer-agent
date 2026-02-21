@@ -87,4 +87,3 @@ The last example is the crucial one. The historian captures things that are not 
 ## Further reading
 
 - [The agentic architecture](agentic-architecture.md) — the historian's place in the lens diagram, and how the facilitator dispatches specialist agents while the historian quietly records
-- [The discovery process](discovery-process.md) — the four rounds of Socratic questioning that produce the raw material the historian captures

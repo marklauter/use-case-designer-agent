@@ -50,8 +50,8 @@ Immediate next steps:
 
 These articles develop the ideas introduced here:
 
-- [The discovery process](discovery-process.md) — how a facilitated session unfolds, in four natural rounds
 - [Conditional goals](conditional-goals.md) — the foundational modeling concept: desired end states plus value conditions, and the derivation chain that produces the entire system design
+- [The design cycle](design-cycle.md) — the three lenses, the feedback loop, and the artifacts each lens produces
 - [The Socratic method](socratic-method.md) — why Socratic extraction works and the specific techniques it employs
 - [The agentic architecture](agentic-architecture.md) — how Phase0 is built: the facilitator, the lenses, and the specialist agents
 - [The historian](historian.md) — who holds the threads when the conversation runs long

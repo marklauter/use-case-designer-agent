@@ -140,5 +140,4 @@ This is not a facilitation script. It is the logical order in which modeling con
 
 ## Further reading
 
-- [The discovery process](discovery-process.md) — how a facilitated session unfolds, following this discovery order through four natural rounds
 - [The Socratic method](socratic-method.md) — why Socratic extraction works for drawing out the actors, goals, and values that conditional goals require

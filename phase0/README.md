@@ -13,11 +13,8 @@ The `vision/` folder contains the Phase0 vision as a set of standalone articles.
 **Core concepts:**
 
 - [Conditional goals](vision/conditional-goals.md) — the foundational modeling concept: desired end states plus value conditions, and the derivation chain that produces the entire system design
+- [The design cycle](vision/design-cycle.md) — the three lenses (actor, use case, bounded context), the feedback loop, and the artifacts each lens produces
 - [The Socratic method](vision/socratic-method.md) — why Socratic extraction works, and the techniques it employs: the why-chain, noun refinement, and contradictions as gold
-
-**The process:**
-
-- [The discovery process](vision/discovery-process.md) — how a facilitated session unfolds, in four natural rounds
 
 **The architecture:**
 
