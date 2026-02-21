@@ -3,7 +3,7 @@ name: modeling-usecases
 description: Use case lens depth — continuous invariants, goal obstacles with recovery strategies, intent-driven scenarios. Load when structuring interactions, writing scenarios, or challenging use case content.
 ---
 
-# Use case lens philosophy
+# Modeling usecases
 
 Deep principles for use case construction. Builds on the shared vocabulary in grounding-models.
 
