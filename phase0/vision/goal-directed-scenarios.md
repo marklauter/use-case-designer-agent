@@ -24,13 +24,13 @@ A goal-directed scenario orders steps by what the actor values. The ATM actor's 
 
 The goal-directed ordering: return the card *before* dispensing cash. The actor cannot forget what they already have.
 
-This is not a UX trick. It is a direct consequence of designing from goals. If you understand what the actor values, you can predict where their attention will be at each step. If you order steps mechanically, you cannot.
+It is a direct consequence of designing from goals. If you understand what the actor values, you can predict where their attention will be at each step. If you order steps mechanically, you cannot.
 
 The scenario section of a use case expresses intent, not mechanics. But it also orders steps to protect the actor's values at each point — not just at the end.
 
 ---
 
-## Obstacles are threats to the goal, not alternate paths
+## Obstacles are threats to the goal
 
 Traditional use case modeling describes exceptions and alternate flows. An exception is a branch point — a condition that diverts the scenario to a different path. "If the PIN is incorrect, go to step 3a." The framing is structural: what path does the scenario take?
 

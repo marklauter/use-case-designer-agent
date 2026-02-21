@@ -1,12 +1,12 @@
 # The Socratic method
 
-Phase0 discovers domain models through Socratic dialogue, not top-down architecture. A facilitator asks questions. Domain experts answer. The model emerges from what they say — not from what the facilitator assumes.
+Phase0 discovers domain models through Socratic dialogue. A facilitator asks questions. Domain experts answer. The model emerges from what they say — not from what the facilitator assumes.
 
 This article explains why Socratic extraction works and describes the three core techniques: the why-chain, noun refinement, and contradictions as gold.
 
 ---
 
-## Why extraction, not declaration
+## Why extraction
 
 Most domain modeling tools are top-down. You declare contexts and fill them in. That works when the modeler already understands the domain. It fails when the domain is unfamiliar, contested, or only partially understood — which is most of the time.
 
@@ -24,7 +24,7 @@ Four properties make Socratic questioning the right tool for domain discovery.
 
 2. **Contradictions between experts reveal real boundaries.** When Alice says "shipment" means "what leaves the warehouse" and Bob says "shipment" means "what the customer ordered," that disagreement is a context boundary waiting to be named.
 
-3. **The why-chain prevents projection.** The facilitator does not project their model onto the domain. They keep asking why until the domain's own structure emerges. The facilitator's job is to surface, not to supply.
+3. **The why-chain prevents projection.** The facilitator keeps asking why until the domain's own structure emerges. The facilitator's job is to draw out, not to supply.
 
 4. **Noun refinement produces ubiquitous language.** The qualify-refine-separate cycle turns sloppy vocabulary into precise, unambiguous terms. This is how domain language crystallizes — through dialogue, not dictionaries.
 

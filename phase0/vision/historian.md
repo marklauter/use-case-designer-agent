@@ -56,7 +56,6 @@ This resolves the "who holds the threads" question cleanly:
 |  Watches:  conversation between user & agents     |
 |  Writes:   session log, open questions,           |
 |            contradictions, decisions, new terms    |
-|  Never:    asks questions, makes design decisions  |
 |                                                   |
 |  Output format: timestamped markdown notes        |
 |  Storage: session-scoped files, rolled up into    |
@@ -66,11 +65,9 @@ This resolves the "who holds the threads" question cleanly:
 
 The historian agent writes session-scoped markdown files. After each session it rolls these up into cross-session summaries. Other agents read those summaries to recover context they have lost. The human reads them to remember what happened three sessions ago.
 
-## The historian is not the facilitator
+## What the historian does
 
-This distinction is critical. The historian does not route conversations. It does not invoke specialists. It does not ask questions. It does not make design decisions. It listens and writes.
-
-Other agents — the facilitator, the specialist formalizers — do the active work of discovery. The historian supports them by maintaining a durable record of the process itself. This mirrors how shared artifacts already work in Phase0 (markdown files as the integration layer), but adds a dedicated agent responsible for capturing the *process* of discovery, not just its *products*.
+The historian listens and writes. While the facilitator drives conversation and specialists formalize artifacts, the historian maintains a durable record of the process itself. This mirrors how shared artifacts already work in Phase0 (markdown files as the integration layer), but adds a dedicated agent responsible for capturing the *process* of discovery alongside its *products*.
 
 ## What the historian captures vs. what specialist agents write
 

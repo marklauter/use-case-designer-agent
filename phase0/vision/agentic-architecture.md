@@ -26,9 +26,9 @@ This distinction matters because facilitation and formalization are different sk
 
 ---
 
-## The lenses (not a pipeline)
+## The lenses
 
-The discovery process has distinct **lenses** — ways of looking at the domain — but they are not sequential stages. Looking through one lens changes what you see through another. The facilitator shifts between lenses fluidly, following the conversation wherever it leads.
+The discovery process has distinct **lenses** — ways of looking at the domain. Each is bidirectional. Looking through one lens changes what you see through another. The facilitator shifts between lenses fluidly, following the conversation wherever it leads.
 
 ```
 MAIN CONVERSATION  <- the facilitator (already exists)
@@ -56,7 +56,7 @@ The [historian](historian.md) appears in this diagram but has its own article. I
 
 ## The lenses feed each other
 
-The lenses are not a pipeline. They are bidirectional. Discoveries through one lens reshape what you see through every other:
+The lenses are bidirectional. Discoveries through one lens reshape what you see through every other:
 
 - **Actors surface use cases.** "If the Driver's drive is 'complete route efficiently,' there must be a route-assignment process." (actors to use cases)
 - **Use cases spawn actors.** "Wait — who makes this decision? That's not the same person who..." (use cases to actors)
@@ -64,7 +64,7 @@ The lenses are not a pipeline. They are bidirectional. Discoveries through one l
 - **Actor refinement reveals tensions.** "The Sender and the Recipient both care about the package but for different reasons — that's a conflict." (actors to tensions)
 - **Domain narrative suggests actors.** "In our warehouse, the night crew does receiving and the day crew does picking." (narrative to actors)
 
-This multidirectional flow is why a pipeline architecture would fail. You cannot complete "the actor phase" before starting "the use case phase" because designing use cases will discover new actors. The facilitator must be free to shift lenses at any moment.
+This multidirectional flow is what makes the architecture a complete graph. Designing use cases discovers new actors. Actor refinement reveals context boundaries. The facilitator shifts lenses freely, following discoveries wherever they lead.
 
 But the graph has a root. The actor lens is the foundational lens — the ground truth from which everything else is derived. Use cases elaborate actors' goals into scenarios. Bounded contexts partition the domain that actors' tensions revealed. Both lenses depend on actor lens output to begin. The K₃ graph is complete, every edge is bidirectional, but one node is the starting point. The facilitator enforces this: before dispatching to use case or bounded context work, ensure the primary actor and their conditional goal are established.
 

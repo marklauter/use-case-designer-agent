@@ -2,7 +2,7 @@
 
 This case study applies the Phase0 derivation chain to a single domain: an elevator system in a building. It demonstrates how one conditional goal produces a rich ecosystem of actors, each traceable through tensions back to a primary actor's values.
 
-This is not a use case specification. There are no scenarios or step-by-step flows here. This is an actor model — the actors, their goals, their drives, and the genealogy that justifies each one's existence.
+This is an actor model — the actors, their goals, their drives, and the genealogy that justifies each one's existence.
 
 ---
 
@@ -390,23 +390,21 @@ If you cannot trace the chain from a supporting actor back to a primary actor's 
 
 ---
 
-## Common mistakes
+## The actor-hood test
 
-Students modeling the elevator domain consistently make the same mistakes. Each one reveals a misunderstanding about what an actor is.
+Three tests verify whether a candidate belongs in the model as an actor.
 
-**Floors as actors.** Floor 12 has no goal. It does not pursue anything. It does not make decisions. It is a location in the system, not a participant.
+**Does it pursue a goal?** An actor pursues a goal and makes decisions in service of that goal. A floor is a location — it has no goal. The elevator is the system under design — the thing being built. The person standing inside the elevator, pursuing the goal of being on a different floor, is the actor.
 
-**The elevator as an actor.** The elevator is the system under design. You do not model the system as an actor using itself. The elevator is what is being built. The actors are the people and roles that interact with it.
+**Is the goal a desired state?** A goal describes where the actor wants to *be*, not what they want to *do*. "Be on a different floor — safely, promptly, without trauma, with all my limbs" is a goal. "Get to floor 12" names a destination without expressing what the Passenger values. The destination is one parameter. The value conditions are where the system design comes from.
 
-**"Get to floor 12" as a goal.** This is a task disguised as a goal. It names a destination without expressing what the Passenger values about getting there. "Be on a different floor — safely, promptly, without trauma, with all my limbs" is the goal. The destination is just one parameter.
-
-**The Inspector as regulation.** Students often justify the Inspector by saying "regulations require inspections." This reverses the derivation. The Inspector exists because the tension between the Owner's economic drive and the Passenger's safety value demands a third party. Regulations are how society *implements* that demand. The tension is the modeling concept. The regulation is an implementation detail.
+**Does the genealogy trace to a tension?** Every supporting actor exists because a tension demands them. The Inspector exists because the tension between the Owner's economic drive and the Passenger's safety value demands a third party. Regulations are how society implements that demand. The tension is the modeling concept. The regulation is an implementation detail.
 
 ---
 
 ## The discovery path
 
-This model was not designed top-down. It was discovered through conversation, starting from a single actor. The path from 1 actor to 80+ followed a series of moves, each triggered by a question or observation. This section captures those moves in order because the *process* of discovery is as instructive as the result.
+This model was discovered through conversation, starting from a single actor. The path from 1 actor to 80+ followed a series of moves, each triggered by a question or observation. This section captures those moves in order because the *process* of discovery is as instructive as the result.
 
 ### Move 1: the free actors
 
