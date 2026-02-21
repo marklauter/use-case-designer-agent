@@ -37,7 +37,7 @@
 
 ## Scenario
 
-{Steps express intent and outcomes, not mechanics. "Wiki content is verified against current source" gives an actor room to find the best path. "Run grep on lines 1-50" does not. Domain events (marked with -->) signal meaningful state transitions — these are the published language between bounded contexts.}
+{Steps express intent and outcomes, not mechanics. "Wiki content is verified against current source" gives an actor room to find the best path. "Run grep on lines 1-50" does not. Step ordering reflects what the actor values — arrange the interaction so that the actor's values are protected at each point, not just at the end. Domain events (marked with -->) signal meaningful state transitions — these are the published language between bounded contexts.}
 
 1. **{Actor}** — {Intent / outcome}
    --> {DomainEvent}
@@ -46,7 +46,7 @@
 
 ## Goal obstacles
 
-{Conditions that threaten goal satisfaction. Keyed to scenario steps. Describe the threat to the goal — "source code is unreachable" — not the error code. Each obstacle includes a recovery strategy or graceful degradation path.}
+{Conditions that threaten goal satisfaction, not alternate flows or branch points. Keyed to scenario steps. Describe what is at risk — "source code is unreachable" — not what branched. Each obstacle includes a recovery strategy: a way to protect the goal or degrade gracefully, not a different path through the scenario.}
 
 ### {Step}a — {What threatens the goal}
 
