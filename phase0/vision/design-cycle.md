@@ -55,7 +55,7 @@ Once the primary actor's conditional goal is established, discoveries through an
 - **Tensions reveal context boundaries.** A tension between two value conditions turns out to live at the boundary between two bounded contexts. The bounded context lens inherits what the actor lens discovered.
 - **Domain events expose missing use cases.** An event is published but nothing reacts to it. A missing use case surfaces through the bounded context lens and feeds back to the use case lens.
 
-The cycle repeats until the model stabilizes — until new passes through each lens stop producing discoveries that invalidate earlier work.
+The cycle repeats until the model converges — until new passes through each lens stop producing discoveries that invalidate earlier work.
 
 ---
 

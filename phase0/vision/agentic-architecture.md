@@ -66,6 +66,8 @@ The lenses are not a pipeline. They are bidirectional. Discoveries through one l
 
 This multidirectional flow is why a pipeline architecture would fail. You cannot complete "the actor phase" before starting "the use case phase" because designing use cases will discover new actors. The facilitator must be free to shift lenses at any moment.
 
+But the graph has a root. The actor lens is the foundational lens — the ground truth from which everything else is derived. Use cases elaborate actors' goals into scenarios. Bounded contexts partition the domain that actors' tensions revealed. Both lenses depend on actor lens output to begin. The K₃ graph is complete, every edge is bidirectional, but one node is the starting point. The facilitator enforces this: before dispatching to use case or bounded context work, ensure the primary actor and their conditional goal are established.
+
 ---
 
 ## Specialists as formalizers

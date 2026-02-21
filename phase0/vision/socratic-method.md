@@ -87,6 +87,12 @@ Contradictions are gold because they surface structural boundaries that no singl
 
 ---
 
+## Everything traces back to actors
+
+All three techniques serve the same foundation. The why-chain draws out the primary actor's real goal. Noun refinement separates actors until each carries a singular drive. Contradictions reveal context boundaries born from tensions on actors' values. The actor lens is the ground truth of domain discovery — the starting point from which use cases and bounded contexts are derived. Socratic extraction is the method by which that ground truth is established.
+
+---
+
 ## Further reading
 
 - [Conditional goals](conditional-goals.md) — the actors, goals, and values that Socratic extraction draws out
