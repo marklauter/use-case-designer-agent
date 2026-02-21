@@ -4,7 +4,7 @@ Guiding principles for writing use cases in this project. Every use case must re
 
 ## Primary actors have goals; supporting actors have drives
 
-A **primary actor** has a *goal* — a desired end state the system exists to serve. You don't need to explain why they want it. The system is built for them.
+A **primary actor** has a *goal* — a desired end state the system exists to serve. You don't need to explain why they want it. The system is built for them. Their goals always have conditions.
 
 A **supporting actor** has a *drive* — a reason to participate. Drives explain why supporting actors exist at all. They are born from tensions between primary actor goals and the forces of reality.
 
