@@ -1,3 +1,8 @@
+---
+name: structuring-agents
+description: Structural contract for agent definition files. Defines the artifact shape for both reading and writing agent definitions. Load when writing or reviewing agent definitions.
+---
+
 # Structuring agents
 
 Structural contract for agent definition files. Defines the artifact shape for both reading and writing agent definitions. Load when writing or reviewing agent definitions.
