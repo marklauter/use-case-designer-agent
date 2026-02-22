@@ -330,6 +330,6 @@ Check your work:
 
 ### Further reading
 
-- structuring-usecases.md — the complete structural contract.
+- usecase.md — the complete structural contract.
 - models/marklauter/github-wiki-manager/UC-01-populate-new-wiki.md — a fully designed use case.
 - modeling-usecases.md, "Scenario steps express intent" and "Obstacles are threats to the goal" — the principles behind the template.

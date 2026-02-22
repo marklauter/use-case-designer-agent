@@ -107,7 +107,7 @@ Forms and behavioral principles are independently loadable concerns. A form defi
 
 An agent writing a use case needs both: the behavioral principle to make good modeling decisions during the interview, and the form to produce a correctly shaped artifact. A governance agent reviewing a use case only needs the form — it's checking structure, not conducting discovery.
 
-The designing-usecases agent loads `structuring-usecases` (the form — what a use case file looks like) and `modeling-usecases` (the behavioral principle — how to think about use cases). One shapes the output. The other shapes the judgment.
+The designing-usecases agent loads `writing-usecases` (the form — what a use case file looks like) and `modeling-usecases` (the behavioral principle — how to think about use cases). One shapes the output. The other shapes the judgment.
 
 Every structured artifact the system produces has a canonical form in `.claude/modeling-contracts/forms/`. The form defines the shape. Agents consume the form through skill injection. Adding a field to an artifact is a one-line change to the form — every agent that loads the skill gets the update automatically.
 

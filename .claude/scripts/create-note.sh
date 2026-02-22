@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Creates a note file following the note form (structuring-notes.md).
+# Creates a note file following the note form (note.md).
 # Usage: create-note.sh <model-dir> <slug> <topic> <context> <body> <references>
 #
 # Example:

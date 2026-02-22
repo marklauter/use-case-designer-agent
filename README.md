@@ -97,7 +97,7 @@ The model is built through three lenses — actor, use case, bounded context —
 4. **Consolidate** — Extract shared actors, invariants, and domain events
 5. **Refine** — Remove implementation leaks, verify cross-references, reconcile with reality
 
-See [SYSTEM-DESIGN-PHASES.md](.claude/modeling-contracts/SYSTEM-DESIGN-PHASES.md) for the full process guide.
+See [SYSTEM-DESIGN-PHASES.md](retired/SYSTEM-DESIGN-PHASES.md) for the full process guide.
 
 ## Guidance documents
 
@@ -112,16 +112,16 @@ See [SYSTEM-DESIGN-PHASES.md](.claude/modeling-contracts/SYSTEM-DESIGN-PHASES.md
 
 **Forms** — structural contracts for artifact types:
 
-- [structuring-actors.md](.claude/modeling-contracts/forms/structuring-actors.md) — actor documents
-- [structuring-usecases.md](.claude/modeling-contracts/forms/structuring-usecases.md) — use case documents
-- [structuring-contexts.md](.claude/modeling-contracts/forms/structuring-contexts.md) — bounded context documents
-- [structuring-events.md](.claude/modeling-contracts/forms/structuring-events.md) — domain event documents
-- [structuring-invariants.md](.claude/modeling-contracts/forms/structuring-invariants.md) — invariant documents
-- [structuring-catalogs.md](.claude/modeling-contracts/forms/structuring-catalogs.md) — index documents
-- [structuring-glossaries.md](.claude/modeling-contracts/forms/structuring-glossaries.md) — glossary documents
-- [structuring-notes.md](.claude/modeling-contracts/forms/structuring-notes.md) — note documents
-- [structuring-todos.md](.claude/modeling-contracts/forms/structuring-todos.md) — todo documents
+- [actor.md](.claude/modeling-contracts/forms/actor.md) — actor documents
+- [usecase.md](.claude/modeling-contracts/forms/usecase.md) — use case documents
+- [context.md](.claude/modeling-contracts/forms/context.md) — bounded context documents
+- [event.md](.claude/modeling-contracts/forms/event.md) — domain event documents
+- [invariant.md](.claude/modeling-contracts/forms/invariant.md) — invariant documents
+- [catalog.md](.claude/modeling-contracts/forms/catalog.md) — index documents
+- [glossary.md](.claude/modeling-contracts/forms/glossary.md) — glossary documents
+- [note.md](.claude/modeling-contracts/forms/note.md) — note documents
+- [todo.md](.claude/modeling-contracts/forms/todo.md) — todo documents
 
 **Process:**
 
-- [SYSTEM-DESIGN-PHASES.md](.claude/modeling-contracts/SYSTEM-DESIGN-PHASES.md) — how the design process unfolds
+- [SYSTEM-DESIGN-PHASES.md](retired/SYSTEM-DESIGN-PHASES.md) — how the design process unfolds

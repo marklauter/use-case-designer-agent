@@ -109,7 +109,7 @@ The curriculum draws from these documents in the repository:
 | [discovering-actors.md](../.claude/modeling-contracts/principles/discovering-actors.md) | Actor lens — conditional goals, derivation chain, actor genealogy |
 | [modeling-usecases.md](../.claude/modeling-contracts/principles/modeling-usecases.md) | Use case lens — invariants, obstacles, intent-driven scenarios |
 | [mapping-contexts.md](../.claude/modeling-contracts/principles/mapping-contexts.md) | Bounded context lens — boundaries, protocols |
-| [structuring-usecases.md](../.claude/modeling-contracts/forms/structuring-usecases.md) | Structural contract for use cases |
+| [usecase.md](../.claude/modeling-contracts/forms/usecase.md) | Structural contract for use cases |
 | [DOMAIN-MODEL-ARTIFACTS.md](../.claude/modeling-contracts/DOMAIN-MODEL-ARTIFACTS.md) | What artifacts to produce and when |
 | [SYSTEM-DESIGN-PHASES.md](../.claude/modeling-contracts/SYSTEM-DESIGN-PHASES.md) | How the design process unfolds |
 | [DOMAIN-IMPLEMENTATION-PRINCIPLES.md](../.claude/modeling-contracts/principles/DOMAIN-IMPLEMENTATION-PRINCIPLES.md) | How domain models become agentic systems |

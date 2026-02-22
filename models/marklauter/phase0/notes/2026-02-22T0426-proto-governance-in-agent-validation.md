@@ -2,7 +2,7 @@
 
 ## Context
 
-Discovered while reviewing the designing-usecases agent after adding preserving-discoveries and structuring-notes skills. Asked whether the agent had reached its final form.
+Discovered while reviewing the designing-usecases agent after adding preserving-discoveries and writing-notes skills. Asked whether the agent had reached its final form.
 
 ## Body
 

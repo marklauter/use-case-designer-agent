@@ -12,11 +12,11 @@ All durable output requested by the user is written as markdown files unless oth
 
 - **`principles/`** — core beliefs and philosophical prose that creators follow when producing content
 - **`governance/`** — verification rules that reviewers follow when checking content
-- **`forms/`** — structural contracts for artifacts. Each form defines the sections, ordering, and placeholder guidance for one artifact type. Forms are named after their matching structuring skill (e.g., `structuring-usecases` skill → `structuring-usecases.md` form).
+- **`forms/`** — structural contracts for artifacts. Each form defines the sections, ordering, and placeholder guidance for one artifact type. Forms are pure structure — no philosophy, no creation mechanics. They serve both reading and writing.
 - **`../scripts/`** — deterministic helper scripts that agents call via Bash. Judgment stays in the agent; mechanics stay in the script. Always use relative paths (e.g., `bash .claude/scripts/create-note.sh`) to match permission patterns in `settings.json`.
 - Process documents at the root describe the design workflow.
 
-Read the matching form before writing any artifact. The form is the structural authority — same sections, same ordering. When a new artifact type is introduced, create a form in `.claude/modeling-contracts/forms/` and a corresponding structuring skill in `.claude/skills/`.
+Read the matching form before writing any artifact. The form is the structural authority — same sections, same ordering. When a new artifact type is introduced, create a form in `.claude/modeling-contracts/forms/`, a creation script in `.claude/scripts/`, and corresponding reading and writing skills in `.claude/skills/`.
 
 Read before writing reference documentation: `.claude/modeling-contracts/principles/writing-documentation.md`
 
@@ -57,6 +57,13 @@ A **contract** is the atomic unit of modeling knowledge. Each contract has two e
 - The **skill file** in `.claude/skills/` is a thin loader — YAML front matter for triggering, plus a `!`cat`` directive that injects the modeling file's content at activation time. Skills carry no duplicated body content.
 
 The modeling file is the only place to edit contract content. The skill's YAML `description` is the source of truth for triggering language. Agents receive contract content by listing skills in their `skills:` array — the skill injects the modeling file when the agent loads.
+
+**Form contracts** map to a pair of skills:
+
+- **`reading-*`** — `!cat` to the form + discovery and navigation exposition. How to find and interpret artifacts of this type.
+- **`writing-*`** — `!cat` to the form + creation machinery (scripts, guidance). How to produce artifacts of this type.
+
+The form is the single source of truth for structure. The skills add operational knowledge — one for consumption, one for production. Three files, no duplication.
 
 ## Renaming and refactoring
 
