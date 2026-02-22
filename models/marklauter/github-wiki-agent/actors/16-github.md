@@ -28,4 +28,4 @@ GitHub provides repository hosting and — through GitHub Issues — a durable e
 
 ## Notes
 
-- GitHub Issues serves as the message queue between the editorial review context (contexts/01-wiki-creation) and the wiki revision context (contexts/03-wiki-revision). The issue body schema is the published protocol that crosses this boundary.
+- GitHub Issues serves as the message queue between the editorial review context (contexts/02-editorial-review) and the wiki revision context (contexts/03-wiki-revision). The issue body schema is the published protocol that crosses this boundary.
