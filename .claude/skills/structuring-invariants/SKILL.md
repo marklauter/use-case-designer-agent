@@ -24,13 +24,13 @@ Invariant files live at `invariants/{nn}-{slug}.md` within the model directory. 
 
 {Which use cases this invariant governs.}
 
-- [{Use case name}](../use-cases/{nn}-{slug}.md)
+- use-cases/{nn}-{slug}
 
 ## Origin
 
 {Which use case or design decision established this invariant.}
 
-Established by [{use case or decision name}](../use-cases/{nn}-{slug}.md).
+Established by use-cases/{nn}-{slug}.
 
 ## Notes
 
@@ -54,12 +54,12 @@ Every workspace operation depends on GitHub API access through `gh`. This invari
 
 ## Scope
 
-- [Populate new wiki](../use-cases/01-populate-new-wiki.md)
-- [Provision workspace](../use-cases/05-provision-workspace.md)
+- use-cases/01-populate-new-wiki
+- use-cases/05-provision-workspace
 
 ## Origin
 
-Established by [Provision workspace](../use-cases/05-provision-workspace.md).
+Established by use-cases/05-provision-workspace.
 ```
 
 ## Complex invariants
@@ -83,10 +83,10 @@ Isolation protects each project. Each workspace maintains its own integrity inde
 
 ## Scope
 
-- [Populate new wiki](../use-cases/01-populate-new-wiki.md)
-- [Resolve documentation issues](../use-cases/03-resolve-documentation-issues.md)
+- use-cases/01-populate-new-wiki
+- use-cases/03-resolve-documentation-issues
 
 ## Origin
 
-Established by [Provision workspace](../use-cases/05-provision-workspace.md).
+Established by use-cases/05-provision-workspace.
 ```

@@ -22,29 +22,29 @@ Context files live at `contexts/{nn}-{slug}.md` within the model directory. `{nn
 
 ## Use cases
 
-{Use cases that live in this context. Each entry is a relative markdown link followed by a short description.}
+{Use cases that live in this context.}
 
-- [{Use case name}](../use-cases/{nn}-{slug}.md) — {What the use case achieves, in one sentence.}
+- use-cases/{nn}-{slug} — {What the use case achieves, in one sentence.}
 
 ## Events produced
 
 {Domain events this context emits. The meaningful state transitions that other contexts may react to.}
 
-- [{EventName}](../events/{nn}-{slug}.md) — {When it occurs and what it signifies.}
+- events/{nn}-{slug} ({EventName}) — {When it occurs and what it signifies.}
 
 ## Events consumed
 
 {Domain events this context reacts to. Events produced by other contexts that trigger or inform behavior here.}
 
-- [{EventName}](../events/{nn}-{slug}.md) — {What this context does in response.}
+- events/{nn}-{slug} ({EventName}) — {What this context does in response.}
 
 ## Integration points
 
 {How this context relates to other contexts. Three relationship types: requires, feeds, shares with.}
 
-- **Requires:** [{Context name}](../contexts/{nn}-{slug}.md) — {What must be in place and why.}
-- **Feeds:** [{Context name}](../contexts/{nn}-{slug}.md) — {What this context provides and why the other context needs it.}
-- **Shares with:** [{Context name}](../contexts/{nn}-{slug}.md) — {What is shared and the protocol that governs it.}
+- **Requires:** contexts/{nn}-{slug} — {What must be in place and why.}
+- **Feeds:** contexts/{nn}-{slug} — {What this context provides and why the other context needs it.}
+- **Shares with:** contexts/{nn}-{slug} — {What is shared and the protocol that governs it.}
 
 ## Notes
 

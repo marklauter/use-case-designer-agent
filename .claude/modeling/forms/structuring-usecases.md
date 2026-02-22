@@ -15,9 +15,9 @@ Use case files live at `use-cases/{nn}-{slug}.md` within the model directory. `{
 
 ## Context
 
-- **Bounded context:** [{context name}](../contexts/{nn}-{slug}.md)
-- **Primary actor:** [{actor name}](../actors/{nn}-{slug}.md)
-- **Supporting actors:** [{actor name}](../actors/{nn}-{slug}.md), [{actor name}](../actors/{nn}-{slug}.md)
+- **Bounded context:** contexts/{nn}-{slug}
+- **Primary actor:** actors/{nn}-{slug}
+- **Supporting actors:** actors/{nn}-{slug}, actors/{nn}-{slug}
 - **Trigger:** {What prompts the actor to pursue this goal}
 
 ## Actor responsibilities
@@ -68,7 +68,7 @@ Use case files live at `use-cases/{nn}-{slug}.md` within the model directory. `{
 
 ### Published
 
-- **[{EventName}](../events/{nn}-{slug}.md)** — {when it occurs and what it signifies}
+- **{EventName}** (events/{nn}-{slug}) — {when it occurs and what it signifies}
 
 ### Internal
 

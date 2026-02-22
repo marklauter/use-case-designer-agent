@@ -42,9 +42,9 @@ The sections below vary by category. Include the sections that match this actor'
 
 ## End goals
 
-{What the actor wants to accomplish, per use case. Each entry links to the use case and states the desired end state.}
+{What the actor wants to accomplish, per use case. Each entry names the use case and states the desired end state.}
 
-- [{Use case title}](../use-cases/{nn}-{slug}.md) — {desired end state for this use case}
+- use-cases/{nn}-{slug} — {desired end state for this use case}
 ```
 
 ### Supporting actor sections
@@ -58,7 +58,7 @@ The sections below vary by category. Include the sections that match this actor'
 
 {If this actor inherits from an abstract type, link to the parent. Omit for abstract types and actors with no parent.}
 
-[{Parent name}](../actors/{nn}-{slug}.md)
+actors/{nn}-{slug}
 
 ## Agent type
 
@@ -72,7 +72,7 @@ The sections below vary by category. Include the sections that match this actor'
 
 {For abstract types only. List concrete actors that inherit this type. Omit for concrete actors.}
 
-- [{Child name}](../actors/{nn}-{slug}.md) — {drive}
+- actors/{nn}-{slug} — {drive}
 ```
 
 ### Sub-system sections
@@ -92,7 +92,7 @@ The sections below vary by category. Include the sections that match this actor'
 
 {Use cases this actor participates in. Primary and supporting actors use "appears in." Sub-systems use "used by."}
 
-- [{Use case title}](../use-cases/{nn}-{slug}.md)
+- use-cases/{nn}-{slug}
 
 ## Notes
 
