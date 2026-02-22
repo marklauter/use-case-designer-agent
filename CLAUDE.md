@@ -40,6 +40,7 @@ Read before writing reference documentation: `.claude/modeling/principles/writin
 - Event files: `events/{nn}-{slug}.md` (e.g., `events/01-wiki-populated.md`)
 - Invariant files: `invariants/{nn}-{slug}.md` (e.g., `invariants/01-source-repo-readonly.md`)
 - Index files: `{topic}/index.md` in each artifact folder (e.g., `actors/index.md`)
+- Note files: `notes/{ISO-datetime}-{slug}.md` (e.g., `notes/2026-02-21T1430-historian-as-skill.md`)
 - Glossary: `GLOSSARY.md` at model root
 - Domain events: PastTense names (e.g., `WikiPopulated`, `FindingFiled`)
 - Actors: capitalize role names (User, Orchestrator)

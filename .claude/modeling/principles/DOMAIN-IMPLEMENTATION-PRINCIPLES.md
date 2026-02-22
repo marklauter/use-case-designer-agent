@@ -90,6 +90,17 @@ But agents within a use case need to exchange information. This happens through 
 
 The distinction matters: process events are prompt context passed through the orchestrator. Domain events are artifacts written to disk or external systems. Never pass raw subagent output between agents — transform it into a structured event first. The template is the form. The filled-in content is the memo.
 
+## Contracts are the atomic unit of modeling knowledge
+
+A **contract** is the atomic unit of modeling knowledge. Each contract has two expressions that share the same name:
+
+- The **modeling file** in `.claude/modeling/` (a principle, a form, or a governance rule) is the structural contract — it defines what to produce or what to verify.
+- The **skill file** in `.claude/skills/` is the behavioral contract — it defines who the agent becomes when it loads the skill.
+
+Together, the structural contract and the behavioral contract form one complete obligation. Forms are communication contracts — they govern what the output looks like. Skills are behavioral contracts — they govern who you are while producing it. Governance rules, when they exist, are verification contracts — they govern how you check that the obligation was honored.
+
+The three contract types cover the full lifecycle of an artifact: the skill shapes the agent's judgment, the form shapes the artifact's structure, and the governance rule shapes the review. Not every contract has all three expressions today. Most have a form and a skill. The `governance/` directory is the architectural placeholder for hard enforcement — verification rules that proofreaders apply to check whether contracts were honored. Until those rules exist, enforcement is soft: agents read contracts and follow them. The structure is ready for the moment soft compliance is not enough.
+
 ## Forms and skills are complementary contracts
 
 Forms are communication contracts. Skills are behavioral contracts. Together they define the complete obligation: what an agent produces and who it is while producing it.
