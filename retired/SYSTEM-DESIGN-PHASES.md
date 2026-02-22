@@ -4,7 +4,7 @@ How a use case model comes into existence. These phases are sequential in the se
 
 The phases describe a *tendency*, not a procedure. Early work tends to be philosophical. Middle work tends to be individual use cases. Late work tends to be consolidation and refinement. But you will find yourself doing all of these simultaneously, and that is correct.
 
-Each artifact type has a structural contract in `.claude/modeling/forms/`.
+Each artifact type has a structural contract in `.claude/modeling-contracts/forms/`.
 
 ---
 

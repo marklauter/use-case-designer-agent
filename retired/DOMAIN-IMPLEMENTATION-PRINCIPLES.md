@@ -94,7 +94,7 @@ The distinction matters: process events are prompt context passed through the or
 
 A **contract** is the atomic unit of modeling knowledge. Each contract has two expressions that share the same name:
 
-- The **modeling file** in `.claude/modeling/` (a principle, a form, or a governance rule) is the structural contract — it defines what to produce or what to verify.
+- The **modeling file** in `.claude/modeling-contracts/` (a principle, a form, or a governance rule) is the structural contract — it defines what to produce or what to verify.
 - The **skill file** in `.claude/skills/` is the behavioral contract — it defines who the agent becomes when it loads the skill.
 
 Together, the structural contract and the behavioral contract form one complete obligation. Forms are communication contracts — they govern what the output looks like. Skills are behavioral contracts — they govern who you are while producing it. Governance rules, when they exist, are verification contracts — they govern how you check that the obligation was honored.
@@ -111,7 +111,7 @@ A skill defines the behavioral stance an agent adopts — the goals, judgment, a
 
 An agent loading a structuring skill and a behavioral skill is an actor who knows both what to produce and how to think while producing it. The designing-usecases agent loads `structuring-usecases` (the form contract — what a use case file looks like) and `modeling-usecases` (the behavioral contract — how to think about use cases). One shapes the output. The other shapes the judgment.
 
-Every structured artifact the system produces has a canonical form in `.claude/modeling/forms/`. The form defines the shape. Agents consume the form as a template. They never hardcode the structure. Adding a field to an artifact is a one-line change to the form, not a hunt through every agent that writes that artifact type.
+Every structured artifact the system produces has a canonical form in `.claude/modeling-contracts/forms/`. The form defines the shape. Agents consume the form as a template. They never hardcode the structure. Adding a field to an artifact is a one-line change to the form, not a hunt through every agent that writes that artifact type.
 
 ## Actors map to skills
 
