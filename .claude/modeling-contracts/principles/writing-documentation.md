@@ -1,6 +1,6 @@
 # Writing documentation
 
-This skill should be used when the user asks to "review the writing", "check the tone", "edit for style", "improve the prose", or when an agent needs writing principles, tone, and style guidelines for producing or reviewing any prose output.
+Writing principles, tone, and style guidelines for producing or reviewing any prose output in the phase0 system.
 
 ## Writing principles
 

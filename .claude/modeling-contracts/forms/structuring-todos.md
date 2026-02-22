@@ -1,6 +1,6 @@
 # Structuring todos
 
-This skill should be used when the user asks to "create a todo", "add a work item", "write a todo file", "review a todo", or when an agent needs the structural contract for todo documents. Defines the artifact shape — sections, ordering, and placeholder guidance — for ephemeral todo files.
+A todo file captures a concrete, actionable work item that surfaced during design — specific enough for an agent or future session to pick up without additional context. Todos are ephemeral and deleted when the work is done.
 
 ## Structure
 

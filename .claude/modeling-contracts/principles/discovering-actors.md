@@ -1,6 +1,6 @@
 # Discovering actors
 
-This skill should be used when the user asks to "discover actors", "identify who the system serves", "challenge an actor's goal", "trace the derivation chain", or when an agent needs actor lens depth — conditional goals, value conditions, tensions, actor genealogy, and single responsibility.
+The actor lens discovers who the system serves and why each participant exists. Depth on conditional goals, value conditions, the tensions that spawn supporting actors, actor genealogy, and the single-responsibility principle for actors.
 
 ## Goals and drives — examples
 

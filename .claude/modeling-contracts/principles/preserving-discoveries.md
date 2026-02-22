@@ -1,6 +1,6 @@
 # Preserving discoveries
 
-This skill should be used when an agent conducts interviews, models artifacts, or explores a domain and needs to capture discoveries durably. Ensures that every discovery — refinement, new artifact, or loose observation — is written to file in the turn it occurs.
+The preservation contract for durable capture during design work. Every discovery — refinement, new artifact, loose observation, or actionable work item — is written to file in the turn it occurs.
 
 ## Drive
 

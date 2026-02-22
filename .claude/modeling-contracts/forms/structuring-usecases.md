@@ -1,6 +1,6 @@
 # Structuring use cases
 
-This skill should be used when the user asks to "write a use case", "create a use case file", "structure the use case", "review the use case format", or when an agent needs the structural contract for use case documents. Defines the artifact shape — sections, ordering, and placeholder guidance — for use case files.
+A use case file captures one goal pursued by one primary actor — the desired end state, the scenario that achieves it, the invariants that constrain it, and the obstacles that threaten it.
 
 ## Structure
 

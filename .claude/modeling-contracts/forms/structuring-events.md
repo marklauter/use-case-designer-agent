@@ -1,6 +1,6 @@
 # Structuring events
 
-This skill should be used when the user asks to "write a domain event", "create an event file", "structure the event document", "review the event format", or when an agent needs the structural contract for domain event documents. Defines the artifact shape — sections, ordering, and placeholder guidance — for event files.
+A domain event file records a meaningful state transition — what happened, what context produced it, who consumes it, and what data it carries.
 
 ## Structure
 

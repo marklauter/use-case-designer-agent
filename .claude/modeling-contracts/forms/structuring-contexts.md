@@ -1,6 +1,6 @@
 # Structuring contexts
 
-This skill should be used when the user asks to "write a bounded context", "create a context file", "structure the context document", "review the context format", or when an agent needs the structural contract for bounded context documents. Defines the artifact shape — sections, ordering, and placeholder guidance — for context files.
+A context file defines one bounded context — the semantic region it governs, the ubiquitous language within it, and its integration points with other contexts through domain events.
 
 ## Structure
 

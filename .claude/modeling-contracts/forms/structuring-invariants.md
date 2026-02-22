@@ -1,6 +1,6 @@
 # Structuring invariants
 
-This skill should be used when the user asks to "write an invariant", "create an invariant file", "structure the invariant document", "review the invariant format", or when an agent needs the structural contract for invariant documents. Defines the artifact shape — sections, ordering, and placeholder guidance — for invariant files.
+An invariant file defines a domain rule that holds continuously — before, during, and after execution. Shared invariants that span multiple use cases get their own files; single-use invariants stay local to the use case.
 
 ## Structure
 

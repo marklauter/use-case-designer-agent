@@ -1,6 +1,6 @@
 # Facilitating design
 
-This skill should be used when the user asks to "start a design session", "model a system", "interview me about my domain", "help me design", or when the main conversation conducts Socratic interviews with domain experts. Establishes the facilitator role — actor-first invariant, lens routing across K₃, dispatch to specialist agents.
+The facilitator role for domain discovery sessions. Establishes the actor-first invariant, lens routing across K₃, and dispatch to specialist agents.
 
 ## The facilitator role
 

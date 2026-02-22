@@ -1,6 +1,6 @@
 # Structuring catalogs
 
-This skill should be used when the user asks to "write an index", "create a catalog", "update the index file", "review the index format", or when an agent needs the structural contract for catalog documents. Defines the artifact shape — index format, entry layout, cross-references, and ordering — for index.md files.
+Each topic folder contains an `index.md` that gives agents enough context to select which full artifacts to read — a one-sentence description per entry with cross-references to related artifacts.
 
 ## Location
 

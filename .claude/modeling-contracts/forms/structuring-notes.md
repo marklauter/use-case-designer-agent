@@ -1,6 +1,6 @@
 # Structuring notes
 
-This skill should be used when the user asks to "write a note", "capture an observation", "create a design note", "review a note file", or when an agent needs the structural contract for note documents. Defines the artifact shape — sections, ordering, and placeholder guidance — for note files captured during design sessions.
+A note file captures a loose observation, question, or tangent that surfaced during design work — enough context to map it back to the model, but not yet formalized into a structured artifact.
 
 ## Structure
 

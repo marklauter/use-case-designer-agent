@@ -1,6 +1,6 @@
-# Modeling usecases
+# Modeling use cases
 
-This skill should be used when the user asks to "design a use case", "write a scenario", "identify goal obstacles", "structure an interaction", or when an agent needs use case lens depth — continuous invariants, goal obstacles with recovery strategies, and intent-driven scenarios.
+The use case lens examines what interactions the design demands. Depth on continuous invariants, goal obstacles with recovery strategies, intent-driven scenarios, step ordering by value, actor responsibilities, and observable outcomes.
 
 ## Use cases are discovered, not invented
 

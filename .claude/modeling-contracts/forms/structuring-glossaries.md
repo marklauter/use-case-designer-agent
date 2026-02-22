@@ -1,6 +1,6 @@
 # Structuring glossaries
 
-This skill should be used when the user asks to "write the glossary", "add a glossary entry", "structure the glossary", "review the glossary format", or when an agent needs the structural contract for glossary documents. Defines the artifact shape — sections, ordering, and placeholder guidance — for GLOSSARY.md files.
+The glossary is a single file that defines every term with precise meaning that spans the model. Terms scoped to one bounded context live in that context's ubiquitous language section instead.
 
 ## Structure
 

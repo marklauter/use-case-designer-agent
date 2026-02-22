@@ -1,6 +1,6 @@
 # Mapping contexts
 
-This skill should be used when the user asks to "map bounded contexts", "define context boundaries", "identify ubiquitous language", "find where meanings diverge", or when an agent needs bounded context lens depth — context boundaries, ubiquitous language, and protocols at crossing points.
+The bounded context lens discovers where meanings partition. Depth on context boundaries, ubiquitous language, and the protocols that govern crossing points between contexts.
 
 ## Bounded contexts over shared models
 
