@@ -20,8 +20,6 @@ An actor's drive becomes its system prompt — not a job description, but a beha
 
 Traditional design produces specs that developers interpret. Phase0 produces a model that *is* the agent architecture — the actors are the agents, the drives are the prompts, the events are the wire protocol. No translation step.
 
-See [DOMAIN-IMPLEMENTATION-PRINCIPLES.md](retired/DOMAIN-IMPLEMENTATION-PRINCIPLES.md) for the full mapping from domain model to agent system.
-
 ## How it works
 
 The agent conducts a phased interview for each use case:
@@ -36,19 +34,7 @@ The agent asks one phase at a time, summarizes what it heard, and moves on. It e
 
 ## What it produces
 
-A use case model lives at `models/{owner}/{repo}/` and is organized into topic directories:
-
-- **`actors/`** — one file per actor (`{nn}-{slug}.md`). Primary actors, supporting actors, and sub-systems.
-- **`use-cases/`** — one file per use case (`{nn}-{slug}.md`). One goal, one primary actor.
-- **`contexts/`** — one file per bounded context (`{nn}-{slug}.md`). Semantic boundaries, ubiquitous language, events produced and consumed.
-- **`events/`** — one file per domain event (`{nn}-{slug}.md`). Meaningful state transitions that cross context boundaries.
-- **`invariants/`** — one file per shared invariant (`{nn}-{slug}.md`). Domain rules that hold continuously across multiple use cases.
-- **`notes/`** — one file per observation (`{ISO-datetime}-{slug}.md`). Durable ideas, tensions, and questions that belong to the model's history.
-- **`todos/`** — one file per work item (`{slug}.md`). Ephemeral action items, deleted when done.
-- Each topic folder contains an **`index.md`** that indexes its artifacts. Gives agents enough context to select which full artifacts to read.
-- **`GLOSSARY.md`** — canonical vocabulary for the model.
-
-Each artifact type has a structural contract in `.claude/modeling-contracts/forms/`.
+An implementation-ready domain model: actors with goals and drives, use cases with scenarios and obstacles, bounded contexts with ubiquitous language, domain events that define integration contracts, invariants that hold continuously, and a glossary of canonical vocabulary. Every element traces back to a primary actor's conditional goal through a derivation chain — nothing is invented, everything is extracted.
 
 ## Key ideas
 
@@ -57,8 +43,6 @@ Each artifact type has a structural contract in `.claude/modeling-contracts/form
 - **Invariants over preconditions.** Domain rules hold continuously — not just at entry.
 - **Intent over mechanics.** Scenario steps say what is accomplished, not how.
 - **Extract, don't invent.** The user knows the domain. The agent knows how to structure it.
-
-See the modeling principles: [grounding-models.md](.claude/modeling-contracts/principles/grounding-models.md) (shared vocabulary), [discovering-actors.md](.claude/modeling-contracts/principles/discovering-actors.md) (actor lens), [modeling-usecases.md](.claude/modeling-contracts/principles/modeling-usecases.md) (use case lens), [mapping-contexts.md](.claude/modeling-contracts/principles/mapping-contexts.md) (bounded context lens).
 
 ## Prerequisites
 
@@ -81,8 +65,6 @@ See the modeling principles: [grounding-models.md](.claude/modeling-contracts/pr
 
 3. **Start designing.** Tell the agent about a system you want to model. It will begin the interview process and guide you through each phase.
 
-The agent loads modeling contracts automatically through skill injection — skills use `!`cat`` directives to inject contract content at activation time, so agents always have the latest principles and forms without manual loading.
-
 ## Sample model
 
 A complete reference model is included at [models/marklauter/github-wiki-agent/](models/marklauter/github-wiki-agent/). It models a GitHub wiki management system across 8 use cases, 6 bounded contexts, 7 domain events, and 17 actors. Start with [use-cases/index.md](models/marklauter/github-wiki-agent/use-cases/index.md) for an overview.
@@ -97,31 +79,3 @@ The model is built through three lenses — actor, use case, bounded context —
 4. **Consolidate** — Extract shared actors, invariants, and domain events
 5. **Refine** — Remove implementation leaks, verify cross-references, reconcile with reality
 
-See [SYSTEM-DESIGN-PHASES.md](retired/SYSTEM-DESIGN-PHASES.md) for the full process guide.
-
-## Guidance documents
-
-**Principles** — core beliefs that guide modeling decisions:
-
-- [grounding-models.md](.claude/modeling-contracts/principles/grounding-models.md) — shared modeling vocabulary (Cooper + Evans)
-- [discovering-actors.md](.claude/modeling-contracts/principles/discovering-actors.md) — actor lens: conditional goals, derivation chain
-- [modeling-usecases.md](.claude/modeling-contracts/principles/modeling-usecases.md) — use case lens: invariants, obstacles, scenarios
-- [mapping-contexts.md](.claude/modeling-contracts/principles/mapping-contexts.md) — bounded context lens: boundaries, domain events
-- [writing-documentation.md](.claude/modeling-contracts/principles/writing-documentation.md) — tone, style, and editorial guidance
-- [DOMAIN-IMPLEMENTATION-PRINCIPLES.md](retired/DOMAIN-IMPLEMENTATION-PRINCIPLES.md) — how domain models become agentic systems
-
-**Forms** — structural contracts for artifact types:
-
-- [actor.md](.claude/modeling-contracts/forms/actor.md) — actor documents
-- [usecase.md](.claude/modeling-contracts/forms/usecase.md) — use case documents
-- [context.md](.claude/modeling-contracts/forms/context.md) — bounded context documents
-- [event.md](.claude/modeling-contracts/forms/event.md) — domain event documents
-- [invariant.md](.claude/modeling-contracts/forms/invariant.md) — invariant documents
-- [catalog.md](.claude/modeling-contracts/forms/catalog.md) — index documents
-- [glossary.md](.claude/modeling-contracts/forms/glossary.md) — glossary documents
-- [note.md](.claude/modeling-contracts/forms/note.md) — note documents
-- [todo.md](.claude/modeling-contracts/forms/todo.md) — todo documents
-
-**Process:**
-
-- [SYSTEM-DESIGN-PHASES.md](retired/SYSTEM-DESIGN-PHASES.md) — how the design process unfolds
