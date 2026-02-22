@@ -46,16 +46,18 @@ Read before writing reference documentation: `.claude/modeling/principles/writin
 - Every artifact follows its matching form exactly — same sections, same ordering
 - Prefer sections, bullets, numbered lists, or prose over tables.
 
-## Ideas
+## Contracts
 
-An **idea** is the atomic unit of modeling knowledge. Each idea has two expressions: a modeling file in `.claude/modeling/` (a principle, a form, or a governance rule) and a skill file in `.claude/skills/` that agents load. Both share the same name.
+A **contract** is the atomic unit of modeling knowledge. Each contract has two expressions that share the same name:
 
-- The **skill file** carries YAML front matter (`name`, `description`) and the body. The `description` is optimized for skill triggering and is the source of truth for the opening paragraph.
-- The **modeling file** carries an H1 title, an opening description paragraph that matches the skill's YAML `description` exactly, and the same body.
+- The **modeling file** in `.claude/modeling/` (a principle, a form, or a governance rule) is the structural contract — it defines what to produce or what to verify, and carries the authoritative prose.
+- The **skill file** in `.claude/skills/` is the behavioral contract — it defines who the agent becomes when it loads the skill. The skill's YAML `description` is optimized for skill triggering and is the source of truth for the opening paragraph.
+
+Both files carry the same body. The modeling file has an H1 title and an opening description paragraph that matches the skill's YAML `description` exactly.
 
 When the skill description and the modeling description diverge, the skill description wins — but meaningful content in the modeling description that would be lost must be preserved by inserting it into the body as a new section.
 
-When editing an idea, update both files and verify both before reporting complete.
+When editing a contract, update both files and verify both before reporting complete.
 
 ## Renaming and refactoring
 
